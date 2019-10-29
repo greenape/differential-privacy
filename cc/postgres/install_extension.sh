@@ -24,6 +24,6 @@ DP_DIR='differential_privacy/postgres'
 $TOOL build $DP_DIR:anon_func.so
 /bin/mkdir -p $(pg_config  --pkglibdir)
 /bin/mkdir -p $(pg_config  --sharedir)/extension
-/usr/bin/install -c -m 755 $TOOL-bin/$DP_DIR/anon_func.so $PG_DIR/lib/
+/usr/bin/install -c -m 755 $TOOL-bin/$DP_DIR/anon_func.so $(pg_config  --pkglibdir)
 /usr/bin/install -c -m 644 $DP_DIR/anon_func.control $(pg_config  --sharedir)/extension/
 /usr/bin/install -c -m 644 $DP_DIR/anon_func--1.0.0.sql  $(pg_config  --sharedir)/extension/
